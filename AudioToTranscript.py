@@ -4,13 +4,18 @@
 # make another class to handle the actual transc
 # call the class
 # return the results
-from mylogger import mylogger
-from pydub import AudioSegment
+import logging
 import math
 import os
+from glob import glob
+import shutil
 import torch
 import torchaudio
-from glob import glob
+from pydub import AudioSegment
+
+from mylogger import mylogger
+
+
 #Thanks mubin986
 #https://stackoverflow.com/questions/37999150/how-to-split-a-wav-file-into-multiple-wav-files
 class SplitWavAudioMubin():
@@ -82,7 +87,7 @@ class AudioToTranscript:
         mylogger.info(f'all files split {self.all_cut_files}')
 
     def getClipFiles(self, min_per_split=5):
-        mylogger.info('Now clipping')
+        mylogger.info('Now clipping full file')
         audio = AudioSegment.from_file(self.audio_filename)
         duration = audio.duration_seconds
         if duration < 300:
@@ -91,7 +96,12 @@ class AudioToTranscript:
         try:
             os.mkdir('./temp_audio')
         except :
-            mylogger.error('can not create directory')
+          
+            shutil.rmtree('./temp_audio')
+            logging.info('removing the directory')
+            os.mkdir('./temp_audio')
+            logging.info('making the dir')
+            
         clipper = SplitWavAudioMubin(folder='./temp_audio', filename=self.audio_filename)
         clipper.multiple_split(min_per_split=min_per_split)
         mylogger.info('done spliting')
@@ -107,7 +117,7 @@ class AudioToTranscript:
         for filename in self.all_cut_files:
             res += self.convertSingle(filename=filename)
         
-        print(res)
+        logging.info(f'TOTAL trnascibed into {res}')
         return res
 
     
@@ -136,5 +146,5 @@ class AudioToTranscript:
         res = ''
         for example in output:
             res += str(decoder(example.cpu()))
-        
+        logging.info(f'convert single {filename} yeilded {res} ')
         return res 
