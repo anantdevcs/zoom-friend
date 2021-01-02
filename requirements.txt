@@ -1,4 +1,5 @@
 certifi==2020.12.5
+cffi==1.14.4
 chardet==4.0.0
 decorator==4.4.2
 idna==2.10
@@ -6,8 +7,18 @@ imageio==2.9.0
 imageio-ffmpeg==0.4.2
 moviepy==1.0.3
 numpy==1.18.2
+omegaconf==2.0.5
 Pillow==8.0.1
 proglog==0.1.9
+pycparser==2.20
+pydub==0.24.1
+PySoundFile==0.9.0.post1
+PyYAML==5.3.1
 requests==2.25.1
+SpeechRecognition==3.8.1
+torch==1.7.1+cpu
+torchaudio==0.7.2
+torchvision==0.8.2+cpu
 tqdm==4.55.0
+typing-extensions==3.7.4.3
 urllib3==1.26.2

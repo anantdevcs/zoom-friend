@@ -18,5 +18,3 @@ class VideoToAudio:
 
     def getAudioFile(self):
         return self.audio_path
-    
-
