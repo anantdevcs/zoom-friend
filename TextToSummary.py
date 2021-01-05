@@ -1,7 +1,35 @@
+MAGIC_LEN = 1000
 from transformers import pipeline
-summarizer = pipeline("summarization")
-ARTICLE = """ 
-different folds and when you do it this way you get some so you get much higher confidence about which hyper parmeters are going to perform more robustly so this is of the gold standard to use but in practice in deep learning when 're training large models and training is very computation expensive this doesn 't get use too much in pract question yeah so the question is a little bit more concretely what 's the difference between the training and the validation set so so for agees so if you think about the canyer' neighbor a classifyer then the training then the training set is this set of images with labels where we memorize the labels and now to classify an image 're going to take the image and compare it to each to each allement in the training data and then transfer the label from the nearest training from the nearest training training training point so now what we 're to do with avalidations so now our algorthmwill memorize everything in the training set and now will take each element of the validation set and compared to each element in the training data and then use this to determine what is the accuracy of our classifyer when it 's applied on the validation set so this is kind of the distinction between training and validation where your algorthm is able to see the labels of the training set but for the validation set your algorith doesn 't have rect access to the labels we only use the labels of the validation set to check how well our algorithm is doing a question the question is whether the test set is it possible that the tests that might not be representative of data out there in the wild and this this definitely can be a problem in practice the underlying statistical assumption here is that your data are all independently and identically distributed so that your ' your training data all of your data points should be sort of drawn from the same underlying probably distribution of course in practice this this might not always be the case and you definitely can run into cases where the test set might not actually be not might not be super representative of what you see in a wild so this is kind of a problem that data set creators and data securators need to think about but when wheni 'm creating data setss for example one thing i do is all go and collect a whole bunch of data all at once using exact same methodology for collecting the data and then afterwards you go and partition at romly between train and test one thing that can crereew up here is maybe 're collecting data over time and you make the earlier data that you collect first be the training dataand the later data you collect the testdata then you actually might run into this kind of shift that could cause problems but as long as this partition is randoming random on your entire set of data ints then that's that that's how we sort of try to leviate this problem in practice so then once you 've gone through this cross this this cross validation procedure then you end up with graph that looks something like this so here on the x access we are showing the value of k for a k nearest neghbor classifyer on some problem and now on the y axcess we are showing what is the accuracy of our classifyer on on on some data set for different values of k and you can see that in this case we've done five fold cross validation over the over the data so for each value of k we have five different examples of how well this how well this algorithm is doing and actually sort of going back to the question about having some test sets that are better or worse for your aloritha this is sort of get using ca fo cross validation is maybe one way to help quantify that a little bit and in that we conside a kind of see a varance of how this algorithm performs on different of the validation folds and that gives you some sense of not just what is the best but also what is the what is the distribution of that performance so when whenwhatever you training machine earing models you endup king lots like this where that show you what is your accuracy or your performance as a function of your hyper parmeters and then you want to go and pick the model or the set of hyper parmeters at the end of the day that performmans the best on the validation set so here we see that maybe about ky equ set probably works about best for this problem so one thing that is so k kye ' neighbor classpars on images are actually almost never used in practice because they 're just when all of these problems that we 've talked about so one one problem is that it 's very slow at test which is kind of the verse of what we want which we talked a earlier another problem is that these these things like you kidy and distance or al one distance are really not very really not a very good way to measure dist distances between images these these sort of v torial distance functions do not correspond very well to per 
-"""
+import time
+from mylogger import mylogger
 
-print(summarizer(ARTICLE, max_length=260, min_length=60, do_sample=False))
+class TextToSummary:
+    def __init__(self, lower_ratio=0.01, higher_ratio=0.03):
+        self.lower_ratio = lower_ratio
+        self.higher_ratio = higher_ratio
+        
+
+    def summarize(self, text):
+        then = time.time()
+        
+        summarizer = pipeline("summarization")
+        clips = self.clipIfNeeded(text)
+        full_summary = ''
+        for clip in clips:
+            mylogger.info(f'Recieved text len={len(clip)} for summarization {len(clips)} ')
+            
+            max_length, min_length = int(len(clip) * self.higher_ratio), int(len(clip) * self.lower_ratio)
+            print(max_length, min_length, len(clip))
+            res = summarizer(clip, max_length=max_length, min_length=min_length , do_sample=False)
+            summary_text = res[0]['summary_text']
+            mylogger.info(f'summary recvd {len(summary_text)}')
+            full_summary += summary_text
+        now = time.time()
+        mylogger.info(f'Recieved summary {full_summary}')
+        mylogger.info(f'Took {now - then} seconds') 
+        return full_summary
+    
+    def clipIfNeeded(self, text):
+        return [text[i : i +  MAGIC_LEN] for i in range(0, len(text) - MAGIC_LEN - 1, MAGIC_LEN)] 
+
+

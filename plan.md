@@ -4,12 +4,12 @@
 * the classes needed 
 
     * `VideoToInfo`
-        * `VideoToTranscript`
-        * `TranscriptToSummary`
+        * <del>`VideoToTranscript`
+        * <del>`TranscriptToSummary`
         * `SummaryToQuestions`
         * Make the pieces acknowledged and debuggable
     * Blue the pieces together 
-    * Learn Logging
+    * <del>Learn Logging
             
 ## Make and integrate the front end
 * Design the layout
