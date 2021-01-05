@@ -7,3 +7,4 @@ __pycache__
 *.wav
  .ipynb_checkpoints
  *.ipynb
+ ex*
