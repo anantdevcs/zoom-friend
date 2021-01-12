@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"></script>
+    <title>Zoom Friend</title>
+    <style>
+        .container {
+            /* display: grid;
+            grid-template-columns: 1fr 4fr; */
+            height: 100%;
+        }
+        .left-box {
+            margin: 3px;
+            margin-top: 18px;
+            height: 100%;
+        }
+        .right-box {
+            margin: 3px;
+            margin-top: 18px;
+            height: 100%;
+        }
+        body {
+            background: rgb(22,52,213);
+background: linear-gradient(41deg, rgba(22,52,213,0.3785889355742297) 29%, rgba(131,168,246,1) 71%);
+        }
+        .header1  {
+background-color: rgb(5, 6, 7);
+        }
+        .top-bar {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            margin-top: 25px;
+        }
+        #submit{
+            margin-left: 25px;
+            size: 25px;
+            height: 80px;
+            width: 80px;
+            font-size: 38px;
+        } 
+        .right-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 40px
+        }
+        .summ {
+            margin: 30px;
+            height: 700px;
+            overflow: scroll;
+        }
+        .trans {
+            margin: 30px;
+            height: 700px;
+            overflow: scroll;
+        }
+
+    </style>
+    <script>
+        
+        function doit() {
+            const inputElement = document.getElementById('input');
+            inputElement.addEventListener("change", handleFiles, false);
+            function handleFiles() {
+                const selectedFile = document.getElementById('input').files[0];
+                const fileList = this.files; 
+                console.log(fileList);
+            }
+
+        }
+
+        function upload() {
+            const selectedFile = document.getElementById('input');
+            let trans = document.getElementById('trans');
+            trans.innerHTML = "Loading..."
+            let summ = document.getElementById('summary');
+            summ.innerHTML = "Loading..."
+            let xhr = new XMLHttpRequest();
+            let formData = new FormData();
+            let file = selectedFile.files[0];      
+            
+            formData.append("file", file);
+            
+            xhr.onreadystatechange = state => { 
+                // console.log(xhr.status); 
+                // console.log(file);
+                // console.log(xhr.responseText);
+                var myObj = JSON.parse(xhr.responseText);
+                console.log(myObj);
+                trans_inner = "<ul>";
+                summ_inner = "<ul>"
+                for (var i = 0 ; i < myObj.summ.length; i++) {
+                    trans_inner = "<li>" + myObj.trans[i] + "</li>";
+                    summ_inner = "<li>" + myObj.summ[i] + "</li>";
+                }
+                trans_inner += '</ul>';
+                summ_inner += '</ul>';
+                trans.innerHTML = trans_inner;
+                summ.innerHTML = summ_inner;
+            } // err handling
+            xhr.open("POST", '/upload');    
+            xhr.send(formData);
+        }
+
+        
+    </script>
+</head>
+
+<body>
+    <div class="header1">
+    <nav class="navbar navbar-light bg-light">
+        <center>
+        <div class="container-fluid">
+            <a class="navbar-brand ">Zoom Friend</a>
+
+        </div>
+    </center>
+    </nav>
+</div>
+    <div class="container">
+        <div class="top-bar">
+            <div class="card">
+                <div class="card-body">
+                    <input class="form-control form-control-lg" id="input" type="file" />
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger btn-floating" id="submit" onclick="upload();"> 
+                <i class="fas fa-magic"></i>
+              </button>
+        </div>
+        <div class="right-box">
+            <div class="card trans">
+                <div class="card-body ">
+                    <h5 class="card-title">Transcript</h5>
+                    <p class="card-text" id="trans">
+                        Transcript appers here
+                    </p>
+                    <button type="button" class="btn btn-primary">Button</button>
+                </div>
+            </div>
+            <div class="card summ">
+                <div class="card-body ">
+                    <h5 class="card-title">Summary</h5>
+                    <p class="card-text" id="summary">
+                        Summary appears here
+                    </p>
+                    <button type="button" class="btn btn-primary">Button</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>doit();</script>
+</html>
