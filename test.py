@@ -1,0 +1,6 @@
+from QuestionsGeneration.generate_questions import gen_questions
+text="Quantum computers are still in the experimental stage but their raw potential and imminent arrival are sure to cause a paradigm shift in computing physics and potentially our understanding of the world we live in today . Quantum computers can analyze large quantities of data and spot patterns quickly they could tackle optimization problems for transportation and industry advanced climate modeling and boost artificial intelligence research one day but for those wondering when they'll be able to pick up a quantum laptop you won't have sort of a personal laptop that is a quantum computer will be a little bit more behind the scenes quantum computers will be more behind-the-scenes but quantum computers won't be available for purchase until the end of the next generation of generations of computing technology is ready to be developed . For more science documentaries check out this one right here don’t forget to subscribe to subscribe and keep coming back to the subscribe"
+text = "Python is an interpreted, high-level, general-purpose programming language. Created by Guido van Rossum \
+and first released in 1991, Python's design philosophy emphasizes code \
+readability with its notable use of significant whitespace."
+print(gen_questions([text]))
