@@ -1,5 +1,218 @@
-WARNING 2021-01-11 22:32:28,302 -  * Debugger is active!
-INFO 2021-01-11 22:32:28,331 -  * Debugger PIN: 293-358-311
-INFO 2021-01-11 22:32:28,341 -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-INFO 2021-01-11 22:32:32,743 - 127.0.0.1 - - [11/Jan/2021 22:32:32] "[37mGET / HTTP/1.1[0m" 200 -
-INFO 2021-01-11 22:32:49,124 - 127.0.0.1 - - [11/Jan/2021 22:32:49] "[37mPOST /upload HTTP/1.1[0m" 200 -
+WARNING 2021-01-16 19:00:42,525 -  * Debugger is active!
+INFO 2021-01-16 19:00:42,540 -  * Debugger PIN: 293-358-311
+INFO 2021-01-16 19:00:42,551 -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO 2021-01-16 19:07:51,667 - 127.0.0.1 - - [16/Jan/2021 19:07:51] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:07:59,417 - 127.0.0.1 - - [16/Jan/2021 19:07:59] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:08:21,706 - 127.0.0.1 - - [16/Jan/2021 19:08:21] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:09:37,364 - 127.0.0.1 - - [16/Jan/2021 19:09:37] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:10:44,698 - 127.0.0.1 - - [16/Jan/2021 19:10:44] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:11:01,849 - 127.0.0.1 - - [16/Jan/2021 19:11:01] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:15:25,499 - 127.0.0.1 - - [16/Jan/2021 19:15:25] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:18:22,362 - 127.0.0.1 - - [16/Jan/2021 19:18:22] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:18:49,892 - 127.0.0.1 - - [16/Jan/2021 19:18:49] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:22:31,143 - 127.0.0.1 - - [16/Jan/2021 19:22:31] "[35m[1mPOST /upload HTTP/1.1[0m" 500 -
+INFO 2021-01-16 19:23:37,813 - 127.0.0.1 - - [16/Jan/2021 19:23:37] "[33mGET /static/css/bootstrap.min.css.map HTTP/1.1[0m" 404 -
+INFO 2021-01-16 19:26:02,146 - 127.0.0.1 - - [16/Jan/2021 19:26:02] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:26:30,897 - 127.0.0.1 - - [16/Jan/2021 19:26:30] "[37mGET /mainpage HTTP/1.1[0m" 200 -
+INFO 2021-01-16 19:27:36,391 - converted uploaded_file.mp4 to temp_converted00.mp3 
+INFO 2021-01-16 19:27:36,393 - Trying to clip file specd by temp_converted00.mp3
+DEBUG 2021-01-16 19:27:38,421 - subprocess.call(['ffmpeg', '-y', '-f', 'mp3', '-i', 'temp_converted00.mp3', '-acodec', 'pcm_s16le', '-vn', '-f', 'wav', '-'])
+INFO 2021-01-16 19:27:42,692 - splitting into splitted_0_.mp3
+DEBUG 2021-01-16 19:27:42,807 - subprocess.call(['ffmpeg', '-y', '-f', 'wav', '-i', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp62shlmgk', '-f', 'mp3', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpbghtg2zs'])
+DEBUG 2021-01-16 19:27:45,786 - subprocess output: b'ffmpeg version n4.3.1-28-ged735e6577 Copyright (c) 2000-2020 the FFmpeg developers'
+DEBUG 2021-01-16 19:27:45,786 - subprocess output: b'  built with gcc 9.3-win32 (GCC) 20200320'
+DEBUG 2021-01-16 19:27:45,786 - subprocess output: b'  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libfreetype --enable-libfribidi --enable-gmp --enable-lzma --enable-fontconfig --enable-opencl --enable-libvmaf --disable-vulkan --enable-libvorbis --enable-amf --enable-libaom --enable-avisynth --enable-libdav1d --enable-libdavs2 --enable-ffnvcodec --enable-cuda-llvm --disable-libglslang --enable-libass --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvpx --enable-libwebp --enable-libmfx --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libtwolame --enable-libvidstab --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-ldflags=-pthread --extra-libs=-lgomp'
+DEBUG 2021-01-16 19:27:45,786 - subprocess output: b'  libavutil      56. 51.100 / 56. 51.100'
+DEBUG 2021-01-16 19:27:45,787 - subprocess output: b'  libavcodec     58. 91.100 / 58. 91.100'
+DEBUG 2021-01-16 19:27:45,787 - subprocess output: b'  libavformat    58. 45.100 / 58. 45.100'
+DEBUG 2021-01-16 19:27:45,787 - subprocess output: b'  libavdevice    58. 10.100 / 58. 10.100'
+DEBUG 2021-01-16 19:27:45,787 - subprocess output: b'  libavfilter     7. 85.100 /  7. 85.100'
+DEBUG 2021-01-16 19:27:45,787 - subprocess output: b'  libswscale      5.  7.100 /  5.  7.100'
+DEBUG 2021-01-16 19:27:45,787 - subprocess output: b'  libswresample   3.  7.100 /  3.  7.100'
+DEBUG 2021-01-16 19:27:45,788 - subprocess output: b'  libpostproc    55.  7.100 / 55.  7.100'
+DEBUG 2021-01-16 19:27:45,788 - subprocess output: b'Guessed Channel Layout for Input Stream #0.0 : stereo'
+DEBUG 2021-01-16 19:27:45,788 - subprocess output: b"Input #0, wav, from 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp62shlmgk':"
+DEBUG 2021-01-16 19:27:45,788 - subprocess output: b'  Duration: 00:01:38.76, bitrate: 1411 kb/s'
+DEBUG 2021-01-16 19:27:45,788 - subprocess output: b'    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s'
+DEBUG 2021-01-16 19:27:45,788 - subprocess output: b'Stream mapping:'
+DEBUG 2021-01-16 19:27:45,789 - subprocess output: b'  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))'
+DEBUG 2021-01-16 19:27:45,789 - subprocess output: b'Press [q] to stop, [?] for help'
+DEBUG 2021-01-16 19:27:45,789 - subprocess output: b"Output #0, mp3, to 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpbghtg2zs':"
+DEBUG 2021-01-16 19:27:45,789 - subprocess output: b'  Metadata:'
+DEBUG 2021-01-16 19:27:45,789 - subprocess output: b'    TSSE            : Lavf58.45.100'
+DEBUG 2021-01-16 19:27:45,790 - subprocess output: b'    Stream #0:0: Audio: mp3 (libmp3lame), 44100 Hz, stereo, s16p'
+DEBUG 2021-01-16 19:27:45,790 - subprocess output: b'    Metadata:'
+DEBUG 2021-01-16 19:27:45,790 - subprocess output: b'      encoder         : Lavc58.91.100 libmp3lame'
+DEBUG 2021-01-16 19:27:45,790 - subprocess output: b'size=     256kB time=00:00:20.66 bitrate= 101.5kbits/s speed=41.3x'
+DEBUG 2021-01-16 19:27:45,790 - subprocess output: b'size=     512kB time=00:00:41.69 bitrate= 100.6kbits/s speed=41.6x'
+DEBUG 2021-01-16 19:27:45,790 - subprocess output: b'size=     768kB time=00:01:00.63 bitrate= 103.8kbits/s speed=40.4x'
+DEBUG 2021-01-16 19:27:45,791 - subprocess output: b'size=    1024kB time=00:01:20.35 bitrate= 104.4kbits/s speed=40.1x'
+DEBUG 2021-01-16 19:27:45,791 - subprocess output: b'size=    1536kB time=00:01:38.29 bitrate= 128.0kbits/s speed=39.3x'
+DEBUG 2021-01-16 19:27:45,791 - subprocess output: b'size=    1544kB time=00:01:38.77 bitrate= 128.1kbits/s speed=39.2x'
+DEBUG 2021-01-16 19:27:45,791 - subprocess output: b'video:0kB audio:1544kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.016005%'
+INFO 2021-01-16 19:27:45,807 - splitting into splitted_1_.mp3
+DEBUG 2021-01-16 19:27:46,033 - subprocess.call(['ffmpeg', '-y', '-f', 'wav', '-i', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp2zts2snr', '-f', 'mp3', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp9t_8mdi7'])
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'ffmpeg version n4.3.1-28-ged735e6577 Copyright (c) 2000-2020 the FFmpeg developers'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  built with gcc 9.3-win32 (GCC) 20200320'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libfreetype --enable-libfribidi --enable-gmp --enable-lzma --enable-fontconfig --enable-opencl --enable-libvmaf --disable-vulkan --enable-libvorbis --enable-amf --enable-libaom --enable-avisynth --enable-libdav1d --enable-libdavs2 --enable-ffnvcodec --enable-cuda-llvm --disable-libglslang --enable-libass --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvpx --enable-libwebp --enable-libmfx --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libtwolame --enable-libvidstab --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-ldflags=-pthread --extra-libs=-lgomp'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libavutil      56. 51.100 / 56. 51.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libavcodec     58. 91.100 / 58. 91.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libavformat    58. 45.100 / 58. 45.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libavdevice    58. 10.100 / 58. 10.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libavfilter     7. 85.100 /  7. 85.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libswscale      5.  7.100 /  5.  7.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libswresample   3.  7.100 /  3.  7.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'  libpostproc    55.  7.100 / 55.  7.100'
+DEBUG 2021-01-16 19:27:49,060 - subprocess output: b'Guessed Channel Layout for Input Stream #0.0 : stereo'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b"Input #0, wav, from 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp2zts2snr':"
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'  Duration: 00:01:38.76, bitrate: 1411 kb/s'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'Stream mapping:'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'Press [q] to stop, [?] for help'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b"Output #0, mp3, to 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp9t_8mdi7':"
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'  Metadata:'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'    TSSE            : Lavf58.45.100'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'    Stream #0:0: Audio: mp3 (libmp3lame), 44100 Hz, stereo, s16p'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'    Metadata:'
+DEBUG 2021-01-16 19:27:49,061 - subprocess output: b'      encoder         : Lavc58.91.100 libmp3lame'
+DEBUG 2021-01-16 19:27:49,062 - subprocess output: b'size=     256kB time=00:00:16.74 bitrate= 125.2kbits/s speed=33.5x'
+DEBUG 2021-01-16 19:27:49,062 - subprocess output: b'size=     256kB time=00:00:28.94 bitrate=  72.5kbits/s speed=28.9x'
+DEBUG 2021-01-16 19:27:49,062 - subprocess output: b'size=     512kB time=00:00:45.08 bitrate=  93.0kbits/s speed=  30x'
+DEBUG 2021-01-16 19:27:49,062 - subprocess output: b'size=     768kB time=00:01:02.77 bitrate= 100.2kbits/s speed=31.4x'
+DEBUG 2021-01-16 19:27:49,062 - subprocess output: b'size=    1024kB time=00:01:20.19 bitrate= 104.6kbits/s speed=  32x'
+DEBUG 2021-01-16 19:27:49,062 - subprocess output: b'size=    1544kB time=00:01:38.77 bitrate= 128.1kbits/s speed=33.4x'
+DEBUG 2021-01-16 19:27:49,062 - subprocess output: b'video:0kB audio:1544kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.016005%'
+INFO 2021-01-16 19:27:49,080 - splitting into splitted_2_.mp3
+DEBUG 2021-01-16 19:27:49,119 - subprocess.call(['ffmpeg', '-y', '-f', 'wav', '-i', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp98iz4vbz', '-f', 'mp3', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpc95aote1'])
+DEBUG 2021-01-16 19:27:51,988 - subprocess output: b'ffmpeg version n4.3.1-28-ged735e6577 Copyright (c) 2000-2020 the FFmpeg developers'
+DEBUG 2021-01-16 19:27:51,988 - subprocess output: b'  built with gcc 9.3-win32 (GCC) 20200320'
+DEBUG 2021-01-16 19:27:51,989 - subprocess output: b'  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libfreetype --enable-libfribidi --enable-gmp --enable-lzma --enable-fontconfig --enable-opencl --enable-libvmaf --disable-vulkan --enable-libvorbis --enable-amf --enable-libaom --enable-avisynth --enable-libdav1d --enable-libdavs2 --enable-ffnvcodec --enable-cuda-llvm --disable-libglslang --enable-libass --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvpx --enable-libwebp --enable-libmfx --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libtwolame --enable-libvidstab --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-ldflags=-pthread --extra-libs=-lgomp'
+DEBUG 2021-01-16 19:27:51,989 - subprocess output: b'  libavutil      56. 51.100 / 56. 51.100'
+DEBUG 2021-01-16 19:27:51,989 - subprocess output: b'  libavcodec     58. 91.100 / 58. 91.100'
+DEBUG 2021-01-16 19:27:51,989 - subprocess output: b'  libavformat    58. 45.100 / 58. 45.100'
+DEBUG 2021-01-16 19:27:51,989 - subprocess output: b'  libavdevice    58. 10.100 / 58. 10.100'
+DEBUG 2021-01-16 19:27:51,989 - subprocess output: b'  libavfilter     7. 85.100 /  7. 85.100'
+DEBUG 2021-01-16 19:27:51,989 - subprocess output: b'  libswscale      5.  7.100 /  5.  7.100'
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b'  libswresample   3.  7.100 /  3.  7.100'
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b'  libpostproc    55.  7.100 / 55.  7.100'
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b'Guessed Channel Layout for Input Stream #0.0 : stereo'
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b"Input #0, wav, from 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp98iz4vbz':"
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b'  Duration: 00:01:38.76, bitrate: 1411 kb/s'
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b'    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s'
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b'Stream mapping:'
+DEBUG 2021-01-16 19:27:51,990 - subprocess output: b'  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))'
+DEBUG 2021-01-16 19:27:51,991 - subprocess output: b'Press [q] to stop, [?] for help'
+DEBUG 2021-01-16 19:27:51,991 - subprocess output: b"Output #0, mp3, to 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpc95aote1':"
+DEBUG 2021-01-16 19:27:51,991 - subprocess output: b'  Metadata:'
+DEBUG 2021-01-16 19:27:51,991 - subprocess output: b'    TSSE            : Lavf58.45.100'
+DEBUG 2021-01-16 19:27:51,991 - subprocess output: b'    Stream #0:0: Audio: mp3 (libmp3lame), 44100 Hz, stereo, s16p'
+DEBUG 2021-01-16 19:27:51,991 - subprocess output: b'    Metadata:'
+DEBUG 2021-01-16 19:27:51,991 - subprocess output: b'      encoder         : Lavc58.91.100 libmp3lame'
+DEBUG 2021-01-16 19:27:51,992 - subprocess output: b'size=     256kB time=00:00:19.41 bitrate= 108.0kbits/s speed=38.8x'
+DEBUG 2021-01-16 19:27:51,992 - subprocess output: b'size=     512kB time=00:00:36.67 bitrate= 114.4kbits/s speed=36.7x'
+DEBUG 2021-01-16 19:27:51,992 - subprocess output: b'size=     768kB time=00:00:56.73 bitrate= 110.9kbits/s speed=37.8x'
+DEBUG 2021-01-16 19:27:51,992 - subprocess output: b'size=    1024kB time=00:01:14.63 bitrate= 112.4kbits/s speed=37.3x'
+DEBUG 2021-01-16 19:27:51,992 - subprocess output: b'size=    1280kB time=00:01:31.01 bitrate= 115.2kbits/s speed=36.4x'
+DEBUG 2021-01-16 19:27:51,992 - subprocess output: b'size=    1544kB time=00:01:38.77 bitrate= 128.1kbits/s speed=35.4x'
+DEBUG 2021-01-16 19:27:51,992 - subprocess output: b'video:0kB audio:1544kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.016005%'
+INFO 2021-01-16 19:27:52,007 - splitting into splitted_3_.mp3
+DEBUG 2021-01-16 19:27:52,065 - subprocess.call(['ffmpeg', '-y', '-f', 'wav', '-i', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp3egq4jsp', '-f', 'mp3', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpkyjhjhpr'])
+DEBUG 2021-01-16 19:27:54,848 - subprocess output: b'ffmpeg version n4.3.1-28-ged735e6577 Copyright (c) 2000-2020 the FFmpeg developers'
+DEBUG 2021-01-16 19:27:54,848 - subprocess output: b'  built with gcc 9.3-win32 (GCC) 20200320'
+DEBUG 2021-01-16 19:27:54,848 - subprocess output: b'  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libfreetype --enable-libfribidi --enable-gmp --enable-lzma --enable-fontconfig --enable-opencl --enable-libvmaf --disable-vulkan --enable-libvorbis --enable-amf --enable-libaom --enable-avisynth --enable-libdav1d --enable-libdavs2 --enable-ffnvcodec --enable-cuda-llvm --disable-libglslang --enable-libass --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvpx --enable-libwebp --enable-libmfx --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libtwolame --enable-libvidstab --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-ldflags=-pthread --extra-libs=-lgomp'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libavutil      56. 51.100 / 56. 51.100'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libavcodec     58. 91.100 / 58. 91.100'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libavformat    58. 45.100 / 58. 45.100'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libavdevice    58. 10.100 / 58. 10.100'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libavfilter     7. 85.100 /  7. 85.100'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libswscale      5.  7.100 /  5.  7.100'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libswresample   3.  7.100 /  3.  7.100'
+DEBUG 2021-01-16 19:27:54,849 - subprocess output: b'  libpostproc    55.  7.100 / 55.  7.100'
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b'Guessed Channel Layout for Input Stream #0.0 : stereo'
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b"Input #0, wav, from 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmp3egq4jsp':"
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b'  Duration: 00:01:38.76, bitrate: 1411 kb/s'
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b'    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s'
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b'Stream mapping:'
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b'  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))'
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b'Press [q] to stop, [?] for help'
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b"Output #0, mp3, to 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpkyjhjhpr':"
+DEBUG 2021-01-16 19:27:54,850 - subprocess output: b'  Metadata:'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'    TSSE            : Lavf58.45.100'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'    Stream #0:0: Audio: mp3 (libmp3lame), 44100 Hz, stereo, s16p'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'    Metadata:'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'      encoder         : Lavc58.91.100 libmp3lame'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'size=     256kB time=00:00:16.32 bitrate= 128.3kbits/s speed=32.6x'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'size=     512kB time=00:00:35.97 bitrate= 116.6kbits/s speed=  36x'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'size=     768kB time=00:00:55.22 bitrate= 113.9kbits/s speed=36.8x'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'size=    1024kB time=00:01:11.91 bitrate= 116.6kbits/s speed=35.9x'
+DEBUG 2021-01-16 19:27:54,851 - subprocess output: b'size=    1280kB time=00:01:30.75 bitrate= 115.5kbits/s speed=36.3x'
+DEBUG 2021-01-16 19:27:54,852 - subprocess output: b'size=    1544kB time=00:01:38.77 bitrate= 128.1kbits/s speed=36.5x'
+DEBUG 2021-01-16 19:27:54,852 - subprocess output: b'video:0kB audio:1544kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.016005%'
+INFO 2021-01-16 19:27:54,869 - splitting into splitted_4_.mp3
+DEBUG 2021-01-16 19:27:54,904 - subprocess.call(['ffmpeg', '-y', '-f', 'wav', '-i', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpau68twaf', '-f', 'mp3', 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmperojr08o'])
+DEBUG 2021-01-16 19:27:58,019 - subprocess output: b'ffmpeg version n4.3.1-28-ged735e6577 Copyright (c) 2000-2020 the FFmpeg developers'
+DEBUG 2021-01-16 19:27:58,020 - subprocess output: b'  built with gcc 9.3-win32 (GCC) 20200320'
+DEBUG 2021-01-16 19:27:58,020 - subprocess output: b'  configuration: --prefix=/ffbuild/prefix --pkg-config-flags=--static --pkg-config=pkg-config --cross-prefix=x86_64-w64-mingw32- --arch=x86_64 --target-os=mingw32 --enable-gpl --enable-version3 --disable-debug --disable-w32threads --enable-pthreads --enable-iconv --enable-zlib --enable-libxml2 --enable-libfreetype --enable-libfribidi --enable-gmp --enable-lzma --enable-fontconfig --enable-opencl --enable-libvmaf --disable-vulkan --enable-libvorbis --enable-amf --enable-libaom --enable-avisynth --enable-libdav1d --enable-libdavs2 --enable-ffnvcodec --enable-cuda-llvm --disable-libglslang --enable-libass --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvpx --enable-libwebp --enable-libmfx --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librav1e --enable-librubberband --enable-schannel --enable-sdl2 --enable-libsoxr --enable-libsrt --enable-libtwolame --enable-libvidstab --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxvid --enable-libzimg --extra-cflags=-DLIBTWOLAME_STATIC --extra-cxxflags= --extra-ldflags=-pthread --extra-libs=-lgomp'
+DEBUG 2021-01-16 19:27:58,020 - subprocess output: b'  libavutil      56. 51.100 / 56. 51.100'
+DEBUG 2021-01-16 19:27:58,020 - subprocess output: b'  libavcodec     58. 91.100 / 58. 91.100'
+DEBUG 2021-01-16 19:27:58,020 - subprocess output: b'  libavformat    58. 45.100 / 58. 45.100'
+DEBUG 2021-01-16 19:27:58,020 - subprocess output: b'  libavdevice    58. 10.100 / 58. 10.100'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'  libavfilter     7. 85.100 /  7. 85.100'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'  libswscale      5.  7.100 /  5.  7.100'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'  libswresample   3.  7.100 /  3.  7.100'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'  libpostproc    55.  7.100 / 55.  7.100'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'Guessed Channel Layout for Input Stream #0.0 : stereo'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b"Input #0, wav, from 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmpau68twaf':"
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'  Duration: 00:01:38.76, bitrate: 1411 kb/s'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'    Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 44100 Hz, stereo, s16, 1411 kb/s'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'Stream mapping:'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'  Stream #0:0 -> #0:0 (pcm_s16le (native) -> mp3 (libmp3lame))'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'Press [q] to stop, [?] for help'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b"Output #0, mp3, to 'C:\\Users\\Admin\\AppData\\Local\\Temp\\tmperojr08o':"
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'  Metadata:'
+DEBUG 2021-01-16 19:27:58,021 - subprocess output: b'    TSSE            : Lavf58.45.100'
+DEBUG 2021-01-16 19:27:58,022 - subprocess output: b'    Stream #0:0: Audio: mp3 (libmp3lame), 44100 Hz, stereo, s16p'
+DEBUG 2021-01-16 19:27:58,022 - subprocess output: b'    Metadata:'
+DEBUG 2021-01-16 19:27:58,022 - subprocess output: b'      encoder         : Lavc58.91.100 libmp3lame'
+DEBUG 2021-01-16 19:27:58,022 - subprocess output: b'size=     248kB time=00:00:15.83 bitrate= 128.3kbits/s speed=31.6x'
+DEBUG 2021-01-16 19:27:58,022 - subprocess output: b'size=     512kB time=00:00:33.49 bitrate= 125.2kbits/s speed=33.5x'
+DEBUG 2021-01-16 19:27:58,022 - subprocess output: b'size=     768kB time=00:00:51.43 bitrate= 122.3kbits/s speed=34.3x'
+DEBUG 2021-01-16 19:27:58,022 - subprocess output: b'size=     768kB time=00:01:03.71 bitrate=  98.7kbits/s speed=31.8x'
+DEBUG 2021-01-16 19:27:58,023 - subprocess output: b'size=    1024kB time=00:01:21.81 bitrate= 102.5kbits/s speed=32.7x'
+DEBUG 2021-01-16 19:27:58,023 - subprocess output: b'size=    1280kB time=00:01:38.01 bitrate= 107.0kbits/s speed=32.7x'
+DEBUG 2021-01-16 19:27:58,023 - subprocess output: b'size=    1544kB time=00:01:38.77 bitrate= 128.1kbits/s speed=32.6x'
+DEBUG 2021-01-16 19:27:58,023 - subprocess output: b'video:0kB audio:1544kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.016005%'
+INFO 2021-01-16 19:27:58,047 - started the diff part aud fn splitted_0_.mp3
+INFO 2021-01-16 19:27:58,048 - started a connction
+INFO 2021-01-16 19:28:30,526 - done
+INFO 2021-01-16 19:28:30,531 - started the diff part aud fn splitted_1_.mp3
+INFO 2021-01-16 19:28:30,531 - started a connction
+INFO 2021-01-16 19:29:04,918 - done
+INFO 2021-01-16 19:29:04,926 - started the diff part aud fn splitted_2_.mp3
+INFO 2021-01-16 19:29:04,927 - started a connction
+INFO 2021-01-16 19:29:35,424 - done
+INFO 2021-01-16 19:29:35,429 - started the diff part aud fn splitted_3_.mp3
+INFO 2021-01-16 19:29:35,430 - started a connction
+INFO 2021-01-16 19:30:05,539 - done
+INFO 2021-01-16 19:30:05,543 - started the diff part aud fn splitted_4_.mp3
+INFO 2021-01-16 19:30:05,543 - started a connction
+INFO 2021-01-16 19:30:34,421 - done
+INFO 2021-01-16 19:34:04,342 - summary recvd 949
+INFO 2021-01-16 19:34:04,343 - Recieved summary  There's no fossil record of viruses in the conventional sense they're just too small and fragile to be preserved in rock but there are fossils of viruses of sorts preserved in the dna of the host that they've infected including you . This molecular fossil trail can help us understand where viruses came from and how they evolved with the rest of us . The key to the virus' success is their simplicity in general in general they consists of a bit of genetic information either dna or rna wrapped in a capsule of protein . Some scientists think that they evolved alongside or even before the earliest cells but without real fossils how can we know the history of viruses enter the science of paleovorology this is a young field within paleontology because it's built on another emerging field genomics in order to look for traces of ancient viruses experts have to study the genomes of their hosts . The thanks to a curiosity stream for supporting p
+INFO 2021-01-16 19:34:04,343 - Took 209.90485072135925 seconds
+INFO 2021-01-16 19:38:25,171 - summary recvd 1025
+INFO 2021-01-16 19:38:25,241 - Recieved summary  The genome of the virus can become integrated into the dna of the host and as long as it doesn't cause a mutation that damages the host cell that bit of viral information may stay there indefinitely . If this happens in a cell that forms sperm or eggs then the viral genome can actually be inherited passed onto the host's offspring with the rest of its genome . Scientists can use this to help figure out the age of virus fossils and they do it the same way they study the evolution of other genes by lining up comparable sequences from different organisms and comparing them . If a sequence of viral dna is found in two different animals then they probably both got it from a common ancestor and that means the virus has to be at least as old as that ancestor so for example circo viruses are a group of viruses that are known to cosomic problems and dogs and scientists and scientists once got it to cosomomics problems and the dogs and dogs are once scientists once had to agree to understand the origin of these viruses
+INFO 2021-01-16 19:38:25,241 - Took 260.7034285068512 seconds
+INFO 2021-01-16 19:40:50,236 - summary recvd 1107
+INFO 2021-01-16 19:40:50,236 - Recieved summary  traces of viruses have been found in the genomes of dogs and also cats and even pandas so the viruses must aid back to before those mammals last year to common ancestor which might be as much as sixty eight million years ago in the late cretaceous period . Eight percent of the human genome includes sequences that originally came from viruses so paleoverology has helped us state the evolution of viruses back hundreds of millions of years but that doesn't bring as much closer to when we think viruses first originated billions of years ago now there are few different models for where viruses came from and they're still hotly debated by scientists so just be prepared if you pick aside one model is known as the virus first model annette holds that since viruses are so much simpler than cellular life it must have evolved first this would mean that viruses are older than the oldest single celled organisms . One model holds that viruses were so much simple than cell life it means that viruses must have evolve first and that viruses is older than that of the oldest cellular life and that would mean
+INFO 2021-01-16 19:40:50,236 - Took 144.66738557815552 seconds
+INFO 2021-01-16 19:45:28,170 - summary recvd 1083
+INFO 2021-01-16 19:45:28,683 - Recieved summary  The escape hypothesis suggests that viruses evolved after sales did from within their own genes b c r genomes contain pieces that can actually copy and paste themselves from one part of our dna to another so some experts think that if one of those pieces becomes able to make itself a nice code protein it can easily escape the cell and become a virus . The third model hinges on the discovery of so called giant viruses the first one discovered in two thousand and three was named mim virus short for mimicking microbe and these things are huge by virus standards they're about seven hundred and fifty nanometers across that's bigger than some bacteria now fortunately they only infect amoeba sweet enough to worry about them at least yet now mimy viruses have way more genes than normal viruses do including some genes that can be used to make protein which viruses are not supposed to do but Mimy viruses still depend on their host to reproduce . Some scientists argue that the extra genes are just random leftovers that are picked up from his hosts over the eons . paleovorology
+INFO 2021-01-16 19:45:29,330 - Took 278.23353457450867 seconds
+INFO 2021-01-16 19:49:00,861 - summary recvd 1006
+INFO 2021-01-16 19:49:00,862 - Recieved summary  The answer depends a lot on who you ask whether viruses are alive or if they have a place on the tree of life . Some scientists are content to put viruses in a sort of gray area of semi-living things . Others are determined to figure out whether viruses occupy their own branch of life and if so they might be thought of as like vines that wrap around it . But either way viruses are here they're in our dna they make us sick sometimes very badly so there's no denying that they have an place and a greater picture of what life on earth is like for good or for ill thanks to curiosity stream for continuing to support pbs digital studios with curiosity stream you can stream documentary films and programs about science nature and history including curiosity's dream originals including rapidly evolving human which explores how changes to our genetic code have made us who we are today and why they continue to evolve you can learn more at curiosity stream com eons and when you sign up use the code eons
+INFO 2021-01-16 19:49:00,862 - Took 209.62906312942505 seconds
+INFO 2021-01-16 19:50:26,334 - 127.0.0.1 - - [16/Jan/2021 19:50:26] "[37mPOST /upload HTTP/1.1[0m" 200 -
+INFO 2021-01-16 20:15:07,275 - 127.0.0.1 - - [16/Jan/2021 20:15:07] "[37mGET / HTTP/1.1[0m" 200 -
+INFO 2021-01-16 20:15:12,757 - 127.0.0.1 - - [16/Jan/2021 20:15:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -

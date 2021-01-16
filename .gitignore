@@ -2,10 +2,10 @@ env
 venv
 *.log
 __pycache__
-*.mp4
-*.mp3
-*.wav
-.ipynb_checkpoints
-*.ipynb
+*mp4
+*mp3
+*wav
+*ipynb_checkpoints
+*ipynb
 ex*
 old

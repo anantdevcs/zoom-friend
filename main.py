@@ -1,6 +1,6 @@
 from VideoToInfo import Clipper, VideoToAudio, TextToSummary, AudioClipToText 
 import json   
-
+from genrerate_questions import generate
 
 def convertToInfo(video_filename):
     obj1 = VideoToAudio.VideoToAudio(video_filename=video_filename)
@@ -22,13 +22,18 @@ def convertToInfo(video_filename):
         obj4 = TextToSummary.TextToSummary()
         text = obj4.summarize(tran)
         summ.append(text)
+    questions = generate(summ)
+
         
 
     print(summ)
-    d = {'summ' : summ, 
-            'trans':trans}
+    d = {
+            'summ' : summ, 
+            'trans':trans,
+            'questions':questions
+        }
     with open("sample.json", "w") as outfile:  
-        json.dump(d, outfile) 
+        json.dump(d, outfile, indent=4) 
     return summ
 
 

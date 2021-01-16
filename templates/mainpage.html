@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Zoom Friend</title>
+<!--
+DREAM PULSE
+https://templatemo.com/tm-536-dream-pulse
+-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick.css') }}"/>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick-theme.css') }}"/>    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-dream-pulse.css') }}" />
+    <style>
+      body {
+        background: rgb(129,83,103);
+background: linear-gradient(90deg, rgba(129,83,103,1) 30%, rgba(218,147,118,0.6026785714285714) 45%);
+      }
+      .upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.cquestions, .csummary, .ctranscript, .cbrands {
+  /* display:none; */
+  /* color:red; */
+  color:#2e050e;
+  color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.textshadow .blurry-text {
+   color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(179, 128, 71, 0.493);
+  border-radius: 10px;
+}
+
+
+    </style>
+
+    <script>
+      // globals
+      // let tran_div = document.getElementById('tran');
+      // let summ_div = document.getElementById('summ');
+      // let ques_div = document.getElementById('ques');
+      
+      function go() {
+        let tran_div = document.getElementById('tran');
+        let summ_div = document.getElementById('summ');
+        let ques_div = document.getElementById('ques');
+        let xhr = new XMLHttpRequest();
+        const selectedFile = document.getElementById('input');
+        let formData = new FormData();
+        let file = selectedFile.files[0];   
+        formData.append("file", file); 
+        tran_div.innerHTML = "<img src= {{url_for('static', filename='img/126.gif')}}>";
+        summ_div.innerHTML = "<img src= {{url_for('static', filename='img/126.gif')}}>";
+        ques_div.innerHTML = "<img src= {{url_for('static', filename='img/126.gif')}}>";
+        xhr.onreadystatechange = state => { 
+                // console.log(xhr.status); 
+                console.log("started a request");
+                // console.log(xhr.responseText);
+                var myObj = JSON.parse(xhr.responseText);
+                console.log(myObj);
+                trans_inner = "<ul>";
+                summ_inner = "<ul>"
+                ques_inner = "<ul>"
+                for (var i = 0 ; i < myObj.summ.length; i++) {
+                    trans_inner += "<li>" + myObj.trans[i] + "</li>";
+                    summ_inner += "<li>" + myObj.summ[i] + "</li>";
+                    ques_inner += "<li>" + myObj.questions[i] + "</li>"
+                }
+                trans_inner += '</ul>';
+                summ_inner += '</ul>';
+                ques_inner += "</li>"
+                tran.innerHTML = trans_inner;
+                summ.innerHTML = summ_inner;
+                ques.innerHTML = ques_inner;
+                tran_div.style.color='#2e050e';
+                tran_div.style.textShadow='none';
+                summ_div.style.color='#2e050e';
+                summ_div.style.textShadow='none';
+                ques_div.style.color='#2e050e';
+                ques_div.style.textShadow='none';
+                
+
+            } // err handling
+            xhr.open("POST", '/upload');    
+            xhr.send(formData);
+
+      }
+
+    </script>
+
+
+  </head>
+  <body>
+    <main class="container-fluid">
+      <div class="row">        
+          <nav id="tmSidebar" class="tm-bg-black-transparent tm-sidebar">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="tm-sidebar-sticky">
+              <div class="tm-brand-box">
+                <div class="tm-double-border-1">
+                  <div class="tm-double-border-2">
+                    <h1 class="tm-brand text-uppercase">
+                      Zoom Friend
+                    </h1>
+                  </div>
+                </div>
+              </div>
+
+              <ul id="tmMainNav" class="nav flex-column text-uppercase text-right tm-main-nav">
+                <li class="nav-item">
+                  <a href="#intro" class="nav-link active">
+                    <span class="d-inline-block mr-3">Intro</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#about" class="nav-link">
+                    <span class="d-inline-block mr-3">About</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                
+                <li class="nav-item">
+                  <a href="#work" class="nav-link">
+                    <span class="d-inline-block mr-3">Get Started</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                
+
+                <li class="nav-item cbrands">
+                  <a href="#transcript" class="nav-link">
+                    <span class="d-inline-block mr-3">transcript</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+
+                <li class="nav-item cbrands">
+                  <a href="#summary" class="nav-link">
+                    <span class="d-inline-block mr-3">summary</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+
+                <li class="nav-item cbrands">
+                  <a href="#questions" class="nav-link">
+                    <span class="d-inline-block mr-3">questions</span>
+                    <span class="d-inline-block tm-white-rect"></span>
+                  </a>
+                </li>
+                
+              </ul>
+              <ul class="nav flex-row tm-social-links">
+                <li class="nav-item">
+                  <a href="https://facebook.com" class="nav-link tm-social-link">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://twitter.com" class="nav-link tm-social-link">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://dribbble.com" class="nav-link tm-social-link">
+                    <i class="fab fa-dribbble"></i>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://linkedin.com" class="nav-link tm-social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
+              <footer class="text-center text-white small">
+                <p class="mb--0 mb-2">Copyright 2020 Dream Pulse</p>
+                <p class="mb-0">Design:
+                  <a rel="nofollow" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
+                </p>
+              </footer>
+            </div>
+          </nav>
+          
+          <main role="main" class="ml-sm-auto col-12">
+            <div
+              class="parallax-window"
+              data-parallax="scroll"
+              data-image-src="{{url_for('static', filename='img/background.jpg')}}">
+              <div class="tm-section-wrap" style="opacity:0;">
+                <section id="intro" class="tm-section">
+                    <div class="tm-bg-white-transparent tm-intro ">
+                        <h2 class="tm-section-title mb-5 text-uppercase tm-color-primary tm-double-border-1 tm-border-gray"></h2>
+                        <p class="tm-color-gray">
+                        </p>
+                        <p class="mb-0 tm-color-gray">
+                        </p>
+                    </div>              
+                </section>
+            </div>            
+          </div>
+
+          <div class="tm-section-wrap bg-white">
+            <section id="about" class="row tm-section">
+              <div class="tm-section-wrap" style="opacity:1;">
+                <section id="intro" class="tm-section">
+                    <div class="tm-bg-white-transparent tm-intro tm-double-border-1 tm-border-gray">
+                        <h2 class="tm-section-title mb-5 text-uppercase tm-color-primary">Introducing Zoom Friend</h2>
+                        <p class="tm-color-gray">
+                          Zoom Friend is an AI powered tool for automatically generating the transcript, summary and sample questions from any of your recorded class lectures. 
+
+                        </p>
+                        <p class="mb-0 tm-color-gray">
+                          Get started by uploading your video lectures!! 
+                        </p>
+                    </div>              
+                </section>
+                <br>
+            </div>   
+              
+            </section>
+          </div>
+
+           
+          <div class="tm-section-wrap bg-white">
+            <section id="work" class="row tm-section">
+                <div class="col-xl-6 mb-5">
+                  <div class="tm-double-border-1 tm-border-gray">
+                    <div class="tm-double-border-2 tm-border-gray tm-box-pad">
+                        <h2 class="tm-color-primary tm-section-title mb-4">GET STARTED</h2>
+                        <p class="mb-4">
+                          Upload your recorded lecture by clicking the upload button on the right side
+                        </p>
+                        <p class="mb-3">
+                          The total process may take time depending on your upload size <br>
+                          SO be on the line! <br>
+                          Enjoy 😊!
+                        </p>
+                    </div>                    
+                  </div>                  
+                </div>
+                <div class="col-xl-6 mb-5">
+                  <div class="tm-contact-form-wrap">
+                    
+                      <div class="upload-btn-wrapper">
+                        <button class="btn">Upload a file</button>
+                        <input type="file" name="input" id="input" />
+                      </div>
+                      <button class="btn" style="margin: 11px;" id="go_btn" onclick="go();" >Go!</button>
+
+                  </div>                    
+                </div>
+              </section>
+          </div>
+
+            
+          <div class="tm-section-wrap bg-white ctranscript">
+            <section id="transcript" class="row tm-section">
+              <div class="col-12 tm-section-pad">
+                  <div class="tm-flex-item-left">
+                      <div class="tm-w-80">
+                          <h2 class="tm-color-primary tm-section-title mb-4">Generated transcript</h2>
+                          <p class="mb-5" id="tran" >
+                            Aenean est augue, iaculis ut arcu a, cursus tempus eros.
+                            Maecenas ut efficitur lectus, vel commodo nibh. Vivamus
+                            consequat massa non euismod facilisis. Morbi assumsan non libero
+                            a vehicula. Donec blandit suscipit magna sit amet elementum.
+                          </p>
+                      </div>
+                      
+                      
+                  </div> 
+              </div>                             
+            </section>
+          </div>
+          <div class="tm-section-wrap bg-white csummary">
+            <section id="summary" class="row tm-section">
+              <div class="col-12 tm-section-pad">
+                  <div class="tm-flex-item-left">
+                      <div class="tm-w-80">
+                          <h2 class="tm-color-primary tm-section-title mb-4">Generated summary </h2>
+                          <p class="mb-5" id="summ">
+                            Aenean est augue, iaculis ut arcu a, cursus tempus eros.
+                            Maecenas ut efficitur lectus, vel commodo nibh. Vivamus
+                            consequat massa non euismod facilisis. Morbi assumsan non libero
+                            a vehicula. Donec blandit suscipit magna sit amet elementum.
+                          </p>
+                      </div>
+                      
+                      
+                  </div> 
+              </div>                             
+            </section>
+          </div>
+            <div class="tm-section-wrap bg-white cquestions">
+            <section id="questions" class="row tm-section">
+              <div class="col-12 tm-section-pad">
+                  <div class="tm-flex-item-left">
+                      <div class="tm-w-80">
+                          <h2 class="tm-color-primary tm-section-title mb-4">Generated Questions</h2>
+                          <p class="mb-5" id="ques">
+                            Aenean est augue, iaculis ut arcu a, cursus tempus eros.
+                            Maecenas ut efficitur lectus, vel commodo nibh. Vivamus
+                            consequat massa non euismod facilisis. Morbi assumsan non libero
+                            a vehicula. Donec blandit suscipit magna sit amet elementum.
+                          </p>
+                      </div>
+                      
+                      
+                  </div> 
+              </div>                             
+            </section>
+          </div>
+            
+          
+        </main>        
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.singlePageNav.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='slick/slick.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/templatemo-scripts.js') }}"></script>
+  </body>
+</html>
