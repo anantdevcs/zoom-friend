@@ -13,7 +13,7 @@ class AudioClipToText:
 
     def convert(self):
         mylogger.info(f'started the diff part aud fn {self.audio_filename}')
-        JWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2FwaS52b2ljZWdhaW4uYWkvdjEiLCJzdWIiOiIyMjFkZGMxZi1jMjU1LTRjYWItYmY4OC03MzUxMTY1YmZjZjcifQ.iZDUiSdKBnMnVyDcNYSo5cyCJ3fvv_JLnljD4xLa1JQ"
+        JWT = "insert your <JWT> here"
 
         configuration = Configuration()
         configuration.access_token = JWT
